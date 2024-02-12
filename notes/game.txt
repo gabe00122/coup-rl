@@ -1,0 +1,18 @@
+
+phase
+action -> challenge_action # the active player selects the action to perform
+challenge_action -> no_challenges | challenge # each player can challenge the action
+challenge -> action_loses_challenge | action_wins_challenge # the respective player chooses which card to lose, the blocker gets a new card
+
+action_loses_challenge -> end_phase
+
+action_wins_challenge -> block_opportunity
+no_challenges -> block_opportunity
+
+block_opportunity -> block_action | action_preformed # the targeted player can block the action
+block_action -> no_block_challenge | block_challenge # the active player can challenge the block
+no_block_challenge -> action_not_preformed
+
+block_challenge -> block_loses_challenge | block_wins_challenge # the respective player chooses which card to lose, the blocker gets a new card
+block_wins_challenge -> action_not_preformed
+block_loses_challenge -> action_preformed

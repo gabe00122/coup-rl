@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "coup-ai"
+version = "0.1.0"
+description = ""
+authors = ["Gabriel keith <gabe.keith@yahoo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+jax = {extras = ["cpu"], version = "^0.4.23"}
+jaxtyping = "^0.2.25"
+flax = "^0.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+coup-play = "coup_ai.play:main"
+print-graph = "coup_ai.print_graph:main"
